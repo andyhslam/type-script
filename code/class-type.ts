@@ -7,7 +7,7 @@ class Person {
   private name: string
   protected sub: boolean
   static height: string = '180cm'
-  constructor(name, age, sub) {
+  constructor(name: string, age: number, sub: boolean) {
     this.name = name;
     this.age = age;
     this.sub = sub;
@@ -43,7 +43,7 @@ interface Teacher {
 }
 class Act {
   params: string
-  constructor(params) {
+  constructor(params: string) {
     this.params = params;
   }
 }
@@ -56,3 +56,34 @@ class Student extends Act implements School,Teacher {
 
   }
 }
+
+// 抽象类，应用场景：
+// 1.如果你写的类实例化之后毫无用处，此时可以把它定义为抽象类
+// 2.你也可以把它作为一个基类-> 通过继承一个派生类去实现基类的一些方法
+abstract class Abs {
+  name: string
+  constructor(name: string) {
+    this.name = name;
+  }
+  // 在抽象类定义的非抽象方法需要在其内部实现，还可以直接被派生类调用
+  setName(name: string) {
+    this.name = name;
+  }
+  // 在抽象类定义的抽象方法必须在派生类实现
+  abstract getName(): string
+}
+// new Abs(); // 抽象类无法被实例化
+
+// 在Abs抽象类定义 getName 抽象方法但未实现
+// Bps类实现Abs抽象类定义的抽象方法 如不实现就报错 
+class Bps extends Abs {
+  constructor() {
+    super('yyc');
+  }
+  getName(): string {
+    return this.name;
+  }
+}
+let bps = new Bps(); // 非抽象类才能被实例化
+bps.setName('zyn');
+console.log(bps.getName());
