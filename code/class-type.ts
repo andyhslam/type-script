@@ -25,13 +25,13 @@ class Person {
 }
 class Man extends Person {
   constructor() {
-    super('lx', 20, false);
+    super('lx', 20, false); // 通过super关键字去调用父类的构造函数
     this.sub
   }
 }
 console.log(Person.height); // 通过类名直接访问其静态属性
 console.log(Person.run()); // 通过类名直接访问其静态方法
-let p = new Person('lx', 20, false);
+let pct = new Person('lx', 20, false);
 
 
 // 通过接口去约束类
@@ -41,14 +41,14 @@ interface School {
 interface Teacher {
   run(type: boolean): boolean
 }
-class A {
+class Act {
   params: string
   constructor(params) {
     this.params = params;
   }
 }
 // extends: class的继承；implements：约束class的类型
-class Student extends A implements School,Teacher {
+class Student extends Act implements School,Teacher {
   run(type: boolean): boolean {
     return type;
   }

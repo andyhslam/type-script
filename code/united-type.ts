@@ -12,10 +12,10 @@ interface People {
   name: string,
   age: number
 }
-interface Man {
+interface Manzj {
   sex: string,
 }
-const lxy = (man:Man & People): void => {
+const lxy = (man:Manzj & People): void => {
   console.log(man);
 }
 lxy({
@@ -32,15 +32,15 @@ let fn2 = function (num: number | string): void {
 }
 fn2('12345');
 
-interface A {
+interface Au {
   run: string
 }
-interface B {
+interface Bu {
   build: string
 }
-let fn3 = (type: A | B): void => {
+let fn3 = (type: Au | Bu): void => {
   // 类型断言写法二
-  console.log((<A>type).run);
+  console.log((<Au>type).run);
 }
 fn3({
   build: '123'
