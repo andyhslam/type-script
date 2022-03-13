@@ -11,7 +11,7 @@ let arr6: Array<number> = [1, 2, 3];
 let arr7: Array<string> = ['1', '2', '3'];
 let arr8: Array<boolean> = [false, true];
 // 声明多维数组
-let arr9: Array<Array<number | string>> = [[1, 2], [3, 4], ['5', '6']];
+let arr9: Array<Array<number | string>> = [[1, 2], ['3', 4], ['5', '6']];
 
 // IArguments是TypeScript内置的类型
 // interface IArguments {
@@ -21,8 +21,9 @@ let arr9: Array<Array<number | string>> = [[1, 2], [3, 4], ['5', '6']];
 // }
 
 function Arr(...args: number[]): void {
-  console.log(arguments);
-  let arr: IArguments = arguments;
+  let arr10: IArguments = arguments;
+  console.log(arguments, args);
+  console.log(arr10 === arguments); // true
 }
 Arr(4, 5, 6);
 

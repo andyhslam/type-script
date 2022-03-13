@@ -7,7 +7,7 @@ tupleArr[0].length; // success
 tupleArr.push(32, '5566', 99); // success
 
 // 对于越界元素，其类型被限制为 联合类型（在元组中定义的类型）
-// tupleArr.push(true); // errory：越界元素
+// tupleArr.push(true); // error：越界元素
 
 // 越界元素的应用场景：例如定义execl返回的数据
 let excel: [string, string, number][] = [
