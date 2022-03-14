@@ -20,6 +20,11 @@ function add<T>(a: T, b: T): Array<T> {
 add<number>(1, 2); // 简写为 add(1, 2)
 add<string>('曾侯乙', '编钟');
 
+// 箭头函数的写法：
+const arrowFn = <T>(arg: T): T => {
+  return arg
+}
+
 // 2. 多类型的泛型
 function mutiple<T, U>(a: T, b: U): Array<T | U> {
   let arr: Array<T | U> = [a, b];
