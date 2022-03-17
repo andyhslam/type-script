@@ -1,3 +1,4 @@
+// 实现发布订阅模式
 interface EventFace {
   on: (name: string, fn: Function) => void,
   emit: (name: string, ...args: Array<any>) => void,
