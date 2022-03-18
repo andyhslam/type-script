@@ -5,7 +5,7 @@ type Person2 = {
   text: string;
 }
 
-// 将T中的所有属性设置为可选
+// 源码实现：将T中的所有属性设置为可选
 type PartialOne<T> = {
   [P in keyof T]?: T[P];
 };
@@ -18,10 +18,11 @@ type PartialOne<T> = {
 
 // type key = 'name' | 'age' | 'text'
 
-type person2 = Partial<Person2>
+type partial = Partial<Person2>
 // 因此T相当于Person2，P相当于'name'|'age'|'text'的其中一项，T[P]相当于Person2[name|age|text]
 
-// 从类型定义T的属性中，选取指定的属性，返回一个新的类型定义。
+
+// 源码实现：从类型定义T的属性中，选取指定的属性，返回一个新的类型定义。
 type PickOne<T, K extends keyof T> = {
   [P in K]: T[P];
 };
