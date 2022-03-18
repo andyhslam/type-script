@@ -11,6 +11,7 @@ type ReadonlyOne<T> = {
   readonly [P in keyof T]: T[P];
 };
 
+// readonly：这个操作就是将每一个属性变成只读
 // keyof T 等价于 type key = 'name' | 'age' | 'text'
 
 
@@ -18,6 +19,13 @@ type ReadonlyOne<T> = {
 type RecordOne<K extends keyof any, T> = {
   [P in K]: T;
 };
+
+// 详解步骤：
+// 1. keyof any 返回 string number symbol 的联合类型
+// 2. extends：约束类型
+// 3. [P in K]：遍历key，就是string number symbol类型的每一项
+// 4. T：直接返回类型
+// 做到约束 对象的key 同时约束 value
 
 // keyof any 等价于 type key = string | number | symbol(内部定义的)
 

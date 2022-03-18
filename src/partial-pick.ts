@@ -12,7 +12,7 @@ type PartialOne<T> = {
 
 // 详解步骤：
 // 1. keyof：将一个接口对象的全部属性取出来变成联合类型；keyof T：就是联合类型的每一项
-// 2. P in keyof T：可以理解成for(let P in keyof T)，就是遍历key
+// 2. [P in keyof T]：可以理解成for(let P in keyof T)，就是遍历key
 // 3. ?：这个操作就是将每一个属性变成可选项
 // 4. T[P]：索引访问操作符，与 JavaScript 中访问属性值的操作类似
 
