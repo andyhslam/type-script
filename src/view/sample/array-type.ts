@@ -1,4 +1,5 @@
 // 普通方式声明
+let arr0: (number | string)[] = [1, 2, '3'];
 let arr1: number[] = [1, 2, 3];
 let arr2: string[] = ['1', '2', '3'];
 let arr3: boolean[] = [false, true];
